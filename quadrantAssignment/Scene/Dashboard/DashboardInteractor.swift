@@ -31,7 +31,6 @@ extension DashboardInteractor: DashboardPresenterToInteractor {
 
 extension DashboardInteractor: CurrentPriceProtocol {
     func didSuccessGetCurrentPrice(response: CurrentPriceResponse) {
-        print(response)
         presenter?.didSuccessGetCurrentPrice(response: response)
     }
 
