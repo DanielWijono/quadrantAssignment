@@ -1,0 +1,6 @@
+framework module Pods_quadrantAssignment_quadrantAssignmentUITests {
+  umbrella header "Pods-quadrantAssignment-quadrantAssignmentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

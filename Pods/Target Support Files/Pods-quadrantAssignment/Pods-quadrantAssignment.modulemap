@@ -1,0 +1,6 @@
+framework module Pods_quadrantAssignment {
+  umbrella header "Pods-quadrantAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

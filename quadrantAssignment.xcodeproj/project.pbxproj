@@ -16,6 +16,18 @@
 		5BA459272808279600E117F7 /* quadrantAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459262808279600E117F7 /* quadrantAssignmentTests.swift */; };
 		5BA459312808279600E117F7 /* quadrantAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459302808279600E117F7 /* quadrantAssignmentUITests.swift */; };
 		5BA459332808279600E117F7 /* quadrantAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459322808279600E117F7 /* quadrantAssignmentUITestsLaunchTests.swift */; };
+		5BA4594128084ACD00E117F7 /* DashboardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594028084ACD00E117F7 /* DashboardConfigurator.swift */; };
+		5BA4594928084B4F00E117F7 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594428084B4F00E117F7 /* DashboardPresenter.swift */; };
+		5BA4594A28084B4F00E117F7 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594528084B4F00E117F7 /* DashboardRouter.swift */; };
+		5BA4594B28084B4F00E117F7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594628084B4F00E117F7 /* DashboardViewController.swift */; };
+		5BA4594C28084B4F00E117F7 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594728084B4F00E117F7 /* DashboardInteractor.swift */; };
+		5BA4594D28084B4F00E117F7 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594828084B4F00E117F7 /* DashboardProtocol.swift */; };
+		5BA459502809074500E117F7 /* CurrentPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594F2809074500E117F7 /* CurrentPriceResponse.swift */; };
+		5BA45952280907A200E117F7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA45951280907A200E117F7 /* ErrorResponse.swift */; };
+		5BA4595428090B2500E117F7 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4595328090B2500E117F7 /* DashboardViewController.xib */; };
+		C1B95F01564D4CF6FFD6FD7D /* Pods_quadrantAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */; };
+		EA5E5FD542C13C0EE39B20E9 /* Pods_quadrantAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */; };
+		EF9D00A5674E5EDC9EAB15C2 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051EF6A4DE1E3D9104DB19A4 /* Pods-quadrantAssignment-quadrantAssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment-quadrantAssignmentUITests.release.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment-quadrantAssignmentUITests/Pods-quadrantAssignment-quadrantAssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0976044C5C9CCA084BC4E846 /* Pods-quadrantAssignment-quadrantAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment-quadrantAssignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment-quadrantAssignmentUITests/Pods-quadrantAssignment-quadrantAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		163CB3D6D7F565F6CB7D67A9 /* Pods-quadrantAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment.release.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignment_quadrantAssignmentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA4590C2808279400E117F7 /* quadrantAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quadrantAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA4590F2808279400E117F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA459112808279400E117F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,20 @@
 		5BA4592C2808279600E117F7 /* quadrantAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quadrantAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA459302808279600E117F7 /* quadrantAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quadrantAssignmentUITests.swift; sourceTree = "<group>"; };
 		5BA459322808279600E117F7 /* quadrantAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quadrantAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5BA4594028084ACD00E117F7 /* DashboardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardConfigurator.swift; sourceTree = "<group>"; };
+		5BA4594428084B4F00E117F7 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		5BA4594528084B4F00E117F7 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		5BA4594628084B4F00E117F7 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		5BA4594728084B4F00E117F7 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		5BA4594828084B4F00E117F7 /* DashboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
+		5BA4594F2809074500E117F7 /* CurrentPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceResponse.swift; sourceTree = "<group>"; };
+		5BA45951280907A200E117F7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		5BA4595328090B2500E117F7 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8AA7F9ABB9035BE597F3EB /* Pods-quadrantAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5E5FD542C13C0EE39B20E9 /* Pods_quadrantAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B95F01564D4CF6FFD6FD7D /* Pods_quadrantAssignmentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9D00A5674E5EDC9EAB15C2 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +116,8 @@
 				5BA459252808279600E117F7 /* quadrantAssignmentTests */,
 				5BA4592F2808279600E117F7 /* quadrantAssignmentUITests */,
 				5BA4590D2808279400E117F7 /* Products */,
+				A1BFDE4286AD091CDD83F037 /* Pods */,
+				E0027D8F3BB55C0617651365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +134,9 @@
 		5BA4590E2808279400E117F7 /* quadrantAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				5BA4594E2809073000E117F7 /* Response */,
+				5BA4594228084B2D00E117F7 /* Scene */,
+				5BA4593F28084A7500E117F7 /* Configurator */,
 				5BA4590F2808279400E117F7 /* AppDelegate.swift */,
 				5BA459112808279400E117F7 /* SceneDelegate.swift */,
 				5BA459132808279400E117F7 /* ViewController.swift */,
@@ -127,6 +165,68 @@
 			path = quadrantAssignmentUITests;
 			sourceTree = "<group>";
 		};
+		5BA4593F28084A7500E117F7 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4594028084ACD00E117F7 /* DashboardConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5BA4594228084B2D00E117F7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4594328084B3700E117F7 /* Dashboard */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		5BA4594328084B3700E117F7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4594428084B4F00E117F7 /* DashboardPresenter.swift */,
+				5BA4594528084B4F00E117F7 /* DashboardRouter.swift */,
+				5BA4594628084B4F00E117F7 /* DashboardViewController.swift */,
+				5BA4594728084B4F00E117F7 /* DashboardInteractor.swift */,
+				5BA4594828084B4F00E117F7 /* DashboardProtocol.swift */,
+				5BA4595328090B2500E117F7 /* DashboardViewController.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5BA4594E2809073000E117F7 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4594F2809074500E117F7 /* CurrentPriceResponse.swift */,
+				5BA45951280907A200E117F7 /* ErrorResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A1BFDE4286AD091CDD83F037 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */,
+				163CB3D6D7F565F6CB7D67A9 /* Pods-quadrantAssignment.release.xcconfig */,
+				0976044C5C9CCA084BC4E846 /* Pods-quadrantAssignment-quadrantAssignmentUITests.debug.xcconfig */,
+				051EF6A4DE1E3D9104DB19A4 /* Pods-quadrantAssignment-quadrantAssignmentUITests.release.xcconfig */,
+				616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */,
+				AA8AA7F9ABB9035BE597F3EB /* Pods-quadrantAssignmentTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E0027D8F3BB55C0617651365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */,
+				40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */,
+				FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BA459362808279600E117F7 /* Build configuration list for PBXNativeTarget "quadrantAssignment" */;
 			buildPhases = (
+				B19262A3ED111F280790970D /* [CP] Check Pods Manifest.lock */,
 				5BA459082808279400E117F7 /* Sources */,
 				5BA459092808279400E117F7 /* Frameworks */,
 				5BA4590A2808279400E117F7 /* Resources */,
+				A3496C47A4643B94FE1A70ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BA459392808279600E117F7 /* Build configuration list for PBXNativeTarget "quadrantAssignmentTests" */;
 			buildPhases = (
+				7C5886454317F82A592D1C3E /* [CP] Check Pods Manifest.lock */,
 				5BA4591E2808279600E117F7 /* Sources */,
 				5BA4591F2808279600E117F7 /* Frameworks */,
 				5BA459202808279600E117F7 /* Resources */,
+				FFCC178BFCA5DBAEAC6C5907 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BA4593C2808279600E117F7 /* Build configuration list for PBXNativeTarget "quadrantAssignmentUITests" */;
 			buildPhases = (
+				B3EC6F072C591CC595789F3E /* [CP] Check Pods Manifest.lock */,
 				5BA459282808279600E117F7 /* Sources */,
 				5BA459292808279600E117F7 /* Frameworks */,
 				5BA4592A2808279600E117F7 /* Resources */,
+				FC401D4C8A9F233928862F56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +340,7 @@
 				5BA4591C2808279600E117F7 /* LaunchScreen.storyboard in Resources */,
 				5BA459192808279600E117F7 /* Assets.xcassets in Resources */,
 				5BA459172808279400E117F7 /* Main.storyboard in Resources */,
+				5BA4595428090B2500E117F7 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +360,142 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C5886454317F82A592D1C3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quadrantAssignmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3496C47A4643B94FE1A70ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19262A3ED111F280790970D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quadrantAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3EC6F072C591CC595789F3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quadrantAssignment-quadrantAssignmentUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC401D4C8A9F233928862F56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment-quadrantAssignmentUITests/Pods-quadrantAssignment-quadrantAssignmentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment-quadrantAssignmentUITests/Pods-quadrantAssignment-quadrantAssignmentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignment-quadrantAssignmentUITests/Pods-quadrantAssignment-quadrantAssignmentUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFCC178BFCA5DBAEAC6C5907 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5BA459082808279400E117F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5BA459142808279400E117F7 /* ViewController.swift in Sources */,
+				5BA4594B28084B4F00E117F7 /* DashboardViewController.swift in Sources */,
+				5BA4594A28084B4F00E117F7 /* DashboardRouter.swift in Sources */,
+				5BA4594928084B4F00E117F7 /* DashboardPresenter.swift in Sources */,
+				5BA4594128084ACD00E117F7 /* DashboardConfigurator.swift in Sources */,
+				5BA4594D28084B4F00E117F7 /* DashboardProtocol.swift in Sources */,
 				5BA459102808279400E117F7 /* AppDelegate.swift in Sources */,
 				5BA459122808279400E117F7 /* SceneDelegate.swift in Sources */,
+				5BA45952280907A200E117F7 /* ErrorResponse.swift in Sources */,
+				5BA459502809074500E117F7 /* CurrentPriceResponse.swift in Sources */,
+				5BA4594C28084B4F00E117F7 /* DashboardInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +669,7 @@
 		};
 		5BA459372808279600E117F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +698,7 @@
 		};
 		5BA459382808279600E117F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 163CB3D6D7F565F6CB7D67A9 /* Pods-quadrantAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +727,7 @@
 		};
 		5BA4593A2808279600E117F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +748,7 @@
 		};
 		5BA4593B2808279600E117F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA8AA7F9ABB9035BE597F3EB /* Pods-quadrantAssignmentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +769,7 @@
 		};
 		5BA4593D2808279600E117F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0976044C5C9CCA084BC4E846 /* Pods-quadrantAssignment-quadrantAssignmentUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +788,7 @@
 		};
 		5BA4593E2808279600E117F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 051EF6A4DE1E3D9104DB19A4 /* Pods-quadrantAssignment-quadrantAssignmentUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
