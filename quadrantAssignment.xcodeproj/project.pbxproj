@@ -34,6 +34,9 @@
 		5BA4596A2809A6D500E117F7 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459692809A6D500E117F7 /* AppSetting.swift */; };
 		5BA4596E2809AF4C00E117F7 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4596C2809AF4C00E117F7 /* DashboardTableViewCell.swift */; };
 		5BA4596F2809AF4C00E117F7 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4596D2809AF4C00E117F7 /* DashboardTableViewCell.xib */; };
+		5BA459722809B86B00E117F7 /* PriceIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459712809B86B00E117F7 /* PriceIndex.swift */; };
+		5BA459742809BE8700E117F7 /* DateFormattingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459732809BE8700E117F7 /* DateFormattingConstant.swift */; };
+		5BA459772809BEF000E117F7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459762809BEF000E117F7 /* String.swift */; };
 		C1B95F01564D4CF6FFD6FD7D /* Pods_quadrantAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */; };
 		EA5E5FD542C13C0EE39B20E9 /* Pods_quadrantAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */; };
 		EF9D00A5674E5EDC9EAB15C2 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */; };
@@ -92,6 +95,9 @@
 		5BA459692809A6D500E117F7 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		5BA4596C2809AF4C00E117F7 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		5BA4596D2809AF4C00E117F7 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
+		5BA459712809B86B00E117F7 /* PriceIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIndex.swift; sourceTree = "<group>"; };
+		5BA459732809BE8700E117F7 /* DateFormattingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattingConstant.swift; sourceTree = "<group>"; };
+		5BA459762809BEF000E117F7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +158,8 @@
 		5BA4590E2808279400E117F7 /* quadrantAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				5BA459752809BEE300E117F7 /* Extension */,
+				5BA459702809B85800E117F7 /* Model */,
 				5BA459662809A5F500E117F7 /* Common */,
 				5BA4596128092BA900E117F7 /* Worker */,
 				5BA4595E280929EC00E117F7 /* Network */,
@@ -257,6 +265,7 @@
 			children = (
 				5BA459672809A62C00E117F7 /* AppConstant.swift */,
 				5BA459692809A6D500E117F7 /* AppSetting.swift */,
+				5BA459732809BE8700E117F7 /* DateFormattingConstant.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -268,6 +277,22 @@
 				5BA4596D2809AF4C00E117F7 /* DashboardTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		5BA459702809B85800E117F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BA459712809B86B00E117F7 /* PriceIndex.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BA459752809BEE300E117F7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5BA459762809BEF000E117F7 /* String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A1BFDE4286AD091CDD83F037 /* Pods */ = {
@@ -553,8 +578,10 @@
 			files = (
 				5BA4594B28084B4F00E117F7 /* DashboardViewController.swift in Sources */,
 				5BA4594A28084B4F00E117F7 /* DashboardRouter.swift in Sources */,
+				5BA459772809BEF000E117F7 /* String.swift in Sources */,
 				5BA459682809A62C00E117F7 /* AppConstant.swift in Sources */,
 				5BA4596328092BBA00E117F7 /* DashboardWorker.swift in Sources */,
+				5BA459742809BE8700E117F7 /* DateFormattingConstant.swift in Sources */,
 				5BA4594928084B4F00E117F7 /* DashboardPresenter.swift in Sources */,
 				5BA4594128084ACD00E117F7 /* DashboardConfigurator.swift in Sources */,
 				5BA4594D28084B4F00E117F7 /* DashboardProtocol.swift in Sources */,
@@ -565,6 +592,7 @@
 				5BA4595B280927E300E117F7 /* DashboardService.swift in Sources */,
 				5BA45960280929F900E117F7 /* NetworkError.swift in Sources */,
 				5BA459122808279400E117F7 /* SceneDelegate.swift in Sources */,
+				5BA459722809B86B00E117F7 /* PriceIndex.swift in Sources */,
 				5BA4596E2809AF4C00E117F7 /* DashboardTableViewCell.swift in Sources */,
 				5BA45952280907A200E117F7 /* ErrorResponse.swift in Sources */,
 				5BA4596528092BC700E117F7 /* DashboardWorkerProtocol.swift in Sources */,
@@ -745,6 +773,8 @@
 				DEVELOPMENT_TEAM = 5H589R53ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = quadrantAssignment/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access Location is needed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access Location is needed";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -774,6 +804,8 @@
 				DEVELOPMENT_TEAM = 5H589R53ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = quadrantAssignment/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access Location is needed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access Location is needed";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

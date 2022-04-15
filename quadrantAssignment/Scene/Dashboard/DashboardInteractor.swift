@@ -20,8 +20,14 @@ class DashboardInteractor {
 }
 
 extension DashboardInteractor: DashboardPresenterToInteractor {
-    func getCurrentPrice() {
-        worker?.getCurrentPrice()
+    func loadCurrenctPriceIndex() -> [PriceIndex] {
+        do {
+            let data = try dataService.load(key: PriceIndex.structName)
+            let priceIndexArray = try JSONDecoder().decode([PriceIndex].self, from: data)
+            return priceIndexArray
+        } catch {
+            return []
+        }
     }
 
     func requestLocationPermission() {
