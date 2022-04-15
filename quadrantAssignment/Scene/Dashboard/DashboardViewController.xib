@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="quadrantAssignment" customModuleProvider="target">
             <connections>
-                <outlet property="chartView" destination="D8H-uA-k7O" id="pX9-bA-r9z"/>
+                <outlet property="chartView" destination="D8H-uA-k7O" id="kTt-Y7-L0j"/>
                 <outlet property="dateLabel" destination="lP0-13-J50" id="4bE-i8-vkS"/>
                 <outlet property="infoTableView" destination="wXx-mJ-nbA" id="RiQ-Mi-a92"/>
                 <outlet property="priceIndexLabel" destination="gzI-Ur-tgi" id="i5K-Qf-4tb"/>
@@ -50,7 +50,7 @@
                     <rect key="frame" x="20" y="458" width="374" height="404"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-uA-k7O" userLabel="Chart View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-uA-k7O" userLabel="Chart View" customClass="LineChartView" customModule="Charts">
                     <rect key="frame" x="20" y="197" width="381" height="236"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

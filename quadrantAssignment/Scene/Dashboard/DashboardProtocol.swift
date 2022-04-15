@@ -14,6 +14,8 @@ protocol DashboardPresenterToView: AnyObject {
 
 protocol DashboardPresenterToInteractor: AnyObject {
     var presenter: DashboardInteractorToPresenter? { get set }
+    func getCurrentPrice()
+    func requestLocationPermission()
 }
 
 protocol DashboardPresenterToRouter: AnyObject {}
@@ -22,6 +24,12 @@ protocol DashboardViewToPresenter: AnyObject {
     var view: DashboardPresenterToView? { get set }
     var interactor: DashboardPresenterToInteractor? { get set }
     var router: DashboardPresenterToRouter? { get set }
+
+    func getCurrentPrice()
+    func requestLocationPermission()
 }
 
-protocol DashboardInteractorToPresenter: AnyObject {}
+protocol DashboardInteractorToPresenter: AnyObject {
+    func didSuccessGetCurrentPrice(response: CurrentPriceResponse)
+    func didFailedGetCurrentPrice(error: NetworkError)
+}

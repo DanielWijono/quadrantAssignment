@@ -23,6 +23,13 @@
 		5BA459502809074500E117F7 /* CurrentPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4594F2809074500E117F7 /* CurrentPriceResponse.swift */; };
 		5BA45952280907A200E117F7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA45951280907A200E117F7 /* ErrorResponse.swift */; };
 		5BA4595428090B2500E117F7 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4595328090B2500E117F7 /* DashboardViewController.xib */; };
+		5BA459572809245100E117F7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459562809245100E117F7 /* DataService.swift */; };
+		5BA459592809247200E117F7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459582809247200E117F7 /* LocationService.swift */; };
+		5BA4595B280927E300E117F7 /* DashboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4595A280927E300E117F7 /* DashboardService.swift */; };
+		5BA4595D280929AB00E117F7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4595C280929AB00E117F7 /* NetworkService.swift */; };
+		5BA45960280929F900E117F7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4595F280929F900E117F7 /* NetworkError.swift */; };
+		5BA4596328092BBA00E117F7 /* DashboardWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4596228092BBA00E117F7 /* DashboardWorker.swift */; };
+		5BA4596528092BC700E117F7 /* DashboardWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4596428092BC700E117F7 /* DashboardWorkerProtocol.swift */; };
 		C1B95F01564D4CF6FFD6FD7D /* Pods_quadrantAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */; };
 		EA5E5FD542C13C0EE39B20E9 /* Pods_quadrantAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */; };
 		EF9D00A5674E5EDC9EAB15C2 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */; };
@@ -70,6 +77,13 @@
 		5BA4594F2809074500E117F7 /* CurrentPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceResponse.swift; sourceTree = "<group>"; };
 		5BA45951280907A200E117F7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		5BA4595328090B2500E117F7 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		5BA459562809245100E117F7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		5BA459582809247200E117F7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5BA4595A280927E300E117F7 /* DashboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardService.swift; sourceTree = "<group>"; };
+		5BA4595C280929AB00E117F7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5BA4595F280929F900E117F7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5BA4596228092BBA00E117F7 /* DashboardWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWorker.swift; sourceTree = "<group>"; };
+		5BA4596428092BC700E117F7 /* DashboardWorkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWorkerProtocol.swift; sourceTree = "<group>"; };
 		616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +144,9 @@
 		5BA4590E2808279400E117F7 /* quadrantAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				5BA4596128092BA900E117F7 /* Worker */,
+				5BA4595E280929EC00E117F7 /* Network */,
+				5BA459552809244400E117F7 /* Service */,
 				5BA4594E2809073000E117F7 /* Response */,
 				5BA4594228084B2D00E117F7 /* Scene */,
 				5BA4593F28084A7500E117F7 /* Configurator */,
@@ -195,6 +212,34 @@
 				5BA45951280907A200E117F7 /* ErrorResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		5BA459552809244400E117F7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5BA459562809245100E117F7 /* DataService.swift */,
+				5BA459582809247200E117F7 /* LocationService.swift */,
+				5BA4595A280927E300E117F7 /* DashboardService.swift */,
+				5BA4595C280929AB00E117F7 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5BA4595E280929EC00E117F7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4595F280929F900E117F7 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5BA4596128092BA900E117F7 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4596228092BBA00E117F7 /* DashboardWorker.swift */,
+				5BA4596428092BC700E117F7 /* DashboardWorkerProtocol.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		A1BFDE4286AD091CDD83F037 /* Pods */ = {
@@ -479,13 +524,20 @@
 			files = (
 				5BA4594B28084B4F00E117F7 /* DashboardViewController.swift in Sources */,
 				5BA4594A28084B4F00E117F7 /* DashboardRouter.swift in Sources */,
+				5BA4596328092BBA00E117F7 /* DashboardWorker.swift in Sources */,
 				5BA4594928084B4F00E117F7 /* DashboardPresenter.swift in Sources */,
 				5BA4594128084ACD00E117F7 /* DashboardConfigurator.swift in Sources */,
 				5BA4594D28084B4F00E117F7 /* DashboardProtocol.swift in Sources */,
+				5BA459572809245100E117F7 /* DataService.swift in Sources */,
+				5BA4595D280929AB00E117F7 /* NetworkService.swift in Sources */,
 				5BA459102808279400E117F7 /* AppDelegate.swift in Sources */,
+				5BA4595B280927E300E117F7 /* DashboardService.swift in Sources */,
+				5BA45960280929F900E117F7 /* NetworkError.swift in Sources */,
 				5BA459122808279400E117F7 /* SceneDelegate.swift in Sources */,
 				5BA45952280907A200E117F7 /* ErrorResponse.swift in Sources */,
+				5BA4596528092BC700E117F7 /* DashboardWorkerProtocol.swift in Sources */,
 				5BA459502809074500E117F7 /* CurrentPriceResponse.swift in Sources */,
+				5BA459592809247200E117F7 /* LocationService.swift in Sources */,
 				5BA4594C28084B4F00E117F7 /* DashboardInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

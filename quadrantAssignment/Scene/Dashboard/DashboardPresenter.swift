@@ -14,9 +14,21 @@ class DashboardPresenter {
 }
 
 extension DashboardPresenter: DashboardViewToPresenter {
+    func getCurrentPrice() {
+        interactor?.getCurrentPrice()
+    }
 
+    func requestLocationPermission() {
+        interactor?.requestLocationPermission()
+    }
 }
 
 extension DashboardPresenter: DashboardInteractorToPresenter {
+    func didSuccessGetCurrentPrice(response: CurrentPriceResponse) {
+        
+    }
 
+    func didFailedGetCurrentPrice(error: NetworkError) {
+
+    }
 }
