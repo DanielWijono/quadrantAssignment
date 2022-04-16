@@ -16,8 +16,7 @@ class DashboardViewController: UIViewController {
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
         presenter?.getCurrentPriceApi()
     }
-
-    @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var infoTableView: UITableView!
     var presenter: DashboardViewToPresenter?
 
@@ -38,22 +37,32 @@ class DashboardViewController: UIViewController {
 
     func setupChartView() {
         chartView.delegate = self
-        chartView.backgroundColor = .white
-        chartView.setScaleEnabled(true)
-
-        let leftAxis = chartView.leftAxis
-        leftAxis.axisMaximum = .zero
-        leftAxis.axisMinimum = .zero
-        leftAxis.gridLineWidth = .zero
 
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.drawAxisLineEnabled = true
         xAxis.gridLineWidth = .zero
-        xAxis.axisMinimum = .zero
+        xAxis.axisMinimum = 1
 
-        chartView.rightAxis.enabled = false
-        chartView.legend.form = .empty
+        let rightAxis = chartView.rightAxis
+        rightAxis.enabled = false
+
+        chartView.highlightPerTapEnabled = true
+        chartView.highlightFullBarEnabled = true
+        chartView.highlightPerDragEnabled = false
+        // disable zoom function
+        chartView.pinchZoomEnabled = false
+        chartView.setScaleEnabled(false)
+        chartView.doubleTapToZoomEnabled = false
+        // Bar, Grid Line, Background
+        chartView.drawBarShadowEnabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.drawBordersEnabled = false
+        chartView.borderColor = .black
+        // Legend
+        chartView.legend.enabled = false
+        // Chart Offset
+        chartView.setExtraOffsets(left: 10, top: 0, right: 20, bottom: 50)
     }
 }
 
@@ -77,31 +86,21 @@ extension DashboardViewController: DashboardPresenterToView {
     }
 
     func updateChart() {
-        chartView.leftAxis.axisMaximum = presenter?.getMaxAxis() ?? .zero
-        let dataSet = LineChartDataSet(entries: [], label: .emptyString)
-        dataSet.drawIconsEnabled = false
-        dataSet.setColor(.clear)
-        dataSet.setCircleColor(.clear)
-        dataSet.lineWidth = CGFloat(QuadrantUIConstant.lineWidthThin)
-        dataSet.drawCircleHoleEnabled = false
-        dataSet.valueFont = .systemFont(ofSize: .zero)
-        dataSet.formLineWidth = CGFloat(QuadrantUIConstant.lineWidthThin)
-        dataSet.formSize = CGFloat(QuadrantUIConstant.formSizeSmall)
-
-        (presenter?.populateChartDataEntry() ?? []).forEach { (chartData) in dataSet.addEntryOrdered(chartData) }
-        dataSet.mode = .cubicBezier
-        dataSet.drawCirclesEnabled = false
-        dataSet.fillAlpha = QuadrantUIConstant.alphaMedium
-        dataSet.setColor(.black)
-        dataSet.drawFilledEnabled = true
-        dataSet.drawHorizontalHighlightIndicatorEnabled = true
-        let data = LineChartData(dataSet: dataSet)
-        data.setDrawValues(false)
-        chartView.pinchZoomEnabled = false
-        chartView.doubleTapToZoomEnabled = false
+        var entries = [BarChartDataEntry]()
+        let populateChartDataEntry = presenter?.populateChartDataEntry()
+        for index in .zero..<(populateChartDataEntry?.count ?? .zero) {
+            let xCoordinate = populateChartDataEntry?[index].x ?? .zero
+            let yCoordinate = populateChartDataEntry?[index].y ?? .zero
+            print("x coordinate : \(xCoordinate)")
+            print("y coordinate : \(yCoordinate)")
+            entries.append(BarChartDataEntry(x: xCoordinate, y: yCoordinate))
+        }
+        let set = BarChartDataSet(entries: entries, label: "Price")
+        set.colors = ChartColorTemplates.colorful()
+        let data = BarChartData(dataSet: set)
+        data.setDrawValues(true)
+        data.setValueTextColor(.clear)
         chartView.data = data
-        chartView.animate(xAxisDuration: QuadrantUIConstant.durationShort)
-        chartView.setNeedsDisplay()
     }
 }
 

@@ -71,13 +71,12 @@ extension DashboardPresenter: DashboardViewToPresenter {
 
     func populateChartDataEntry() -> [ChartDataEntry] {
         var chartDataEntries: [ChartDataEntry] = []
-        if let allListPriceIndex = interactor?.loadCurrenctPriceIndex() {
-            for priceIndex in allListPriceIndex {
-                let hours = Double(priceIndex.updatedDateTime.formatDateInString(convertDateTo: DateFormattingConstant.hours.rawValue)) ?? .zero
-                let chartDataEntry = ChartDataEntry(x: hours, y: priceIndex.value)
-                chartDataEntries.append(chartDataEntry)
-            }
+        for priceIndex in pickFiveLastCurrencyIndex() {
+            let hours = Double(priceIndex.updatedDateTime.formatDateInString(convertDateTo: DateFormattingConstant.hours.rawValue)) ?? .zero
+            let chartDataEntry = ChartDataEntry(x: hours, y: priceIndex.value)
+            chartDataEntries.append(chartDataEntry)
         }
+        print("chart data entry : \(chartDataEntries)")
         return chartDataEntries
     }
 
