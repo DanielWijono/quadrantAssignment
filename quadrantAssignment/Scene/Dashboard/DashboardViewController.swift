@@ -18,14 +18,22 @@ class DashboardViewController: UIViewController {
     }
     @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var infoTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     var presenter: DashboardViewToPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
         setupChartView()
+        setupLoadingIndicator()
         presenter?.getDailyCurrentPriceApi()
         presenter?.requestLocationPermission()
+    }
+
+    func setupLoadingIndicator() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
     }
 
     func registerTableView() {
@@ -79,11 +87,17 @@ extension DashboardViewController: DashboardPresenterToView {
     }
 
     func showLoading() {
-        //TO DO
+        DispatchQueue.main.async {
+            self.loadingIndicator.isHidden = false
+            self.loadingIndicator.startAnimating()
+        }
     }
 
     func dismissLoading() {
-        //TO DO
+        DispatchQueue.main.async {
+            self.loadingIndicator.isHidden = true
+            self.loadingIndicator.stopAnimating()
+        }
     }
 
     func updateChart() {

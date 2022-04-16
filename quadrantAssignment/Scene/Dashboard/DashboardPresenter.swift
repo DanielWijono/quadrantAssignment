@@ -23,10 +23,12 @@ class DashboardPresenter {
 
 extension DashboardPresenter: DashboardViewToPresenter {
     func getCurrentPriceApi() {
+        view?.showLoading()
         interactor?.getCurrencyPriceIndexApi()
     }
 
     func getDailyCurrentPriceApi() {
+        view?.showLoading()
         interactor?.getDailyCurrencyIndex()
     }
 
@@ -103,11 +105,13 @@ extension DashboardPresenter: DashboardInteractorToPresenter {
         let currDate = currentPriceResp?.time.updatedISO.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currDate ?? "")
         DispatchQueue.main.asyncAfter(deadline: .now() + QuadrantUIConstant.durationGlance) {
+            self.view?.dismissLoading()
             self.refreshView()
         }
     }
 
     func didFailedGetCurrentPrice(error: NetworkError) {
+        self.view?.dismissLoading()
         print("error : \(error.localizedDescription)")
     }
 
@@ -116,6 +120,7 @@ extension DashboardPresenter: DashboardInteractorToPresenter {
         let currentDate = priceIndex.updatedDateTime.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currentDate)
         DispatchQueue.main.asyncAfter(deadline: .now() + QuadrantUIConstant.durationGlance, execute: {
+            self.view?.dismissLoading()
             self.refreshView()
         })
     }

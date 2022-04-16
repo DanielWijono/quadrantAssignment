@@ -13,6 +13,7 @@
                 <outlet property="chartView" destination="D8H-uA-k7O" id="urB-Se-iMe"/>
                 <outlet property="dateLabel" destination="lP0-13-J50" id="4bE-i8-vkS"/>
                 <outlet property="infoTableView" destination="wXx-mJ-nbA" id="RiQ-Mi-a92"/>
+                <outlet property="loadingIndicator" destination="fAy-fp-NLT" id="JDS-RL-xYO"/>
                 <outlet property="priceIndexLabel" destination="gzI-Ur-tgi" id="i5K-Qf-4tb"/>
                 <outlet property="refreshButton" destination="5Fo-Fn-pdh" id="yap-w7-h0b"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sVb-Sc-UtR"/>
@@ -57,11 +58,19 @@
                         <constraint firstAttribute="height" constant="236" id="Ljg-DM-O7E"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fAy-fp-NLT">
+                    <rect key="frame" x="177" y="423" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="BmO-H2-GR9"/>
+                        <constraint firstAttribute="width" constant="60" id="FCq-RI-dKS"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wXx-mJ-nbA" secondAttribute="trailing" constant="20" id="31Q-GG-zGs"/>
+                <constraint firstItem="fAy-fp-NLT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6W8-GW-e89"/>
                 <constraint firstItem="gzI-Ur-tgi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="7pJ-gw-2ug"/>
                 <constraint firstItem="wXx-mJ-nbA" firstAttribute="top" secondItem="D8H-uA-k7O" secondAttribute="bottom" constant="25" id="B4V-gg-zqE"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gzI-Ur-tgi" secondAttribute="trailing" constant="20" id="D65-bz-hXj"/>
@@ -72,6 +81,7 @@
                 <constraint firstItem="D8H-uA-k7O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Zdn-Uc-99V"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lP0-13-J50" secondAttribute="trailing" constant="20" id="b16-QG-EI4"/>
                 <constraint firstItem="lP0-13-J50" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cog-IH-Z7L"/>
+                <constraint firstItem="fAy-fp-NLT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="g0Z-IX-IgA"/>
                 <constraint firstItem="wXx-mJ-nbA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="kVV-fk-zqS"/>
                 <constraint firstItem="lP0-13-J50" firstAttribute="top" secondItem="gzI-Ur-tgi" secondAttribute="bottom" constant="20.5" id="mWK-Dg-uDn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Fo-Fn-pdh" secondAttribute="trailing" constant="20" id="qBd-EJ-OUi"/>
