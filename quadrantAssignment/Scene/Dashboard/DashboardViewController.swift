@@ -14,7 +14,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
-        print("tapped")
+        presenter?.getCurrentPriceApi()
     }
 
     @IBOutlet weak var chartView: LineChartView!
@@ -38,6 +38,7 @@ class DashboardViewController: UIViewController {
 
     func setupChartView() {
         chartView.delegate = self
+        chartView.backgroundColor = .white
         chartView.setScaleEnabled(true)
 
         let leftAxis = chartView.leftAxis
@@ -62,7 +63,9 @@ extension DashboardViewController: DashboardPresenterToView {
     }
 
     func reloadDataTableView() {
-        infoTableView.reloadData()
+        DispatchQueue.main.async {
+            self.infoTableView.reloadData()
+        }
     }
 
     func showLoading() {
@@ -87,10 +90,15 @@ extension DashboardViewController: DashboardPresenterToView {
 
         (presenter?.populateChartDataEntry() ?? []).forEach { (chartData) in dataSet.addEntryOrdered(chartData) }
         dataSet.mode = .cubicBezier
+        dataSet.drawCirclesEnabled = false
         dataSet.fillAlpha = QuadrantUIConstant.alphaMedium
-        dataSet.fillColor = .green
+        dataSet.setColor(.black)
         dataSet.drawFilledEnabled = true
+        dataSet.drawHorizontalHighlightIndicatorEnabled = true
         let data = LineChartData(dataSet: dataSet)
+        data.setDrawValues(false)
+        chartView.pinchZoomEnabled = false
+        chartView.doubleTapToZoomEnabled = false
         chartView.data = data
         chartView.animate(xAxisDuration: QuadrantUIConstant.durationShort)
         chartView.setNeedsDisplay()

@@ -8,6 +8,10 @@
 import Foundation
 import Moya
 
+protocol NetworkServiceProtocol {
+    func request<T: TargetType, C: Decodable>(_ t: T, c: C.Type, completion: @escaping (Result<C, NetworkError>) -> Void)
+}
+
 struct NetworkService {
     public static let instance = NetworkService()
     fileprivate let provider: MoyaProvider<MultiTarget>
@@ -22,7 +26,7 @@ struct NetworkService {
     }
 }
 
-extension NetworkService {
+extension NetworkService: NetworkServiceProtocol {
     func request<T: TargetType, C: Decodable>(_ t: T, c: C.Type, completion: @escaping (Result<C, NetworkError>) -> Void) {
         provider.request(MultiTarget(t)) { (result) in
             switch result {

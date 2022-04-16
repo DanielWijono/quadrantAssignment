@@ -22,6 +22,10 @@ class DashboardPresenter {
 }
 
 extension DashboardPresenter: DashboardViewToPresenter {
+    func getCurrentPriceApi() {
+        interactor?.getCurrencyPriceIndexApi()
+    }
+
     func getDailyCurrentPriceApi() {
         interactor?.getDailyCurrencyIndex()
     }
@@ -99,7 +103,7 @@ extension DashboardPresenter: DashboardInteractorToPresenter {
         listPriceIndex = pickFiveLastCurrencyIndex()
         let currDate = currentPriceResp?.time.updatedISO.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currDate ?? "")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.refreshView()
         }
     }
@@ -112,7 +116,7 @@ extension DashboardPresenter: DashboardInteractorToPresenter {
         listPriceIndex = pickFiveLastCurrencyIndex()
         let currentDate = priceIndex.updatedDateTime.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currentDate)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
             self.refreshView()
         })
     }

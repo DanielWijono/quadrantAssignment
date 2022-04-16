@@ -39,6 +39,7 @@
 		5BA459772809BEF000E117F7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459762809BEF000E117F7 /* String.swift */; };
 		5BA459792809D6C800E117F7 /* QuadrantUIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA459782809D6C800E117F7 /* QuadrantUIConstant.swift */; };
 		5BEBEF40280A543900B37686 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEBEF3F280A543900B37686 /* Date.swift */; };
+		5BEBEF45280A6A4C00B37686 /* QuadrantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEBEF44280A6A4C00B37686 /* QuadrantTest.swift */; };
 		C1B95F01564D4CF6FFD6FD7D /* Pods_quadrantAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1DD1E6D2602BE06353A7D4 /* Pods_quadrantAssignmentTests.framework */; };
 		EA5E5FD542C13C0EE39B20E9 /* Pods_quadrantAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */; };
 		EF9D00A5674E5EDC9EAB15C2 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E75BC6CCB15EB48BD191C8 /* Pods_quadrantAssignment_quadrantAssignmentUITests.framework */; };
@@ -102,6 +103,7 @@
 		5BA459762809BEF000E117F7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5BA459782809D6C800E117F7 /* QuadrantUIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadrantUIConstant.swift; sourceTree = "<group>"; };
 		5BEBEF3F280A543900B37686 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5BEBEF44280A6A4C00B37686 /* QuadrantTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadrantTest.swift; sourceTree = "<group>"; };
 		616016EB7C45DE227142556D /* Pods-quadrantAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignmentTests/Pods-quadrantAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D188983BD099BCD72AC50B2 /* Pods-quadrantAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quadrantAssignment.debug.xcconfig"; path = "Target Support Files/Pods-quadrantAssignment/Pods-quadrantAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		9DAB69C666367E5AABEC2B28 /* Pods_quadrantAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quadrantAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA459262808279600E117F7 /* quadrantAssignmentTests.swift */,
+				5BEBEF44280A6A4C00B37686 /* QuadrantTest.swift */,
 			);
 			path = quadrantAssignmentTests;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA459272808279600E117F7 /* quadrantAssignmentTests.swift in Sources */,
+				5BEBEF45280A6A4C00B37686 /* QuadrantTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

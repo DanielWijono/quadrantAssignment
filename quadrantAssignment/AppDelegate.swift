@@ -12,8 +12,8 @@ import BackgroundTasks
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        print("did finish launching")
         let backgroundTaskId = AppSetting.shared.infoForKey(AppConstant.backgroundTaskId.rawValue)
+        print("did finish launching : \(backgroundTaskId)")
         BGTaskScheduler.shared.register(forTaskWithIdentifier: backgroundTaskId, using: nil) { bgTask in
             print("bg task scheduler register call back")
             self.handleBackgroundAppRefresh(task: bgTask as! BGAppRefreshTask)
@@ -67,7 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let backgroundTaskRequest = BGAppRefreshTaskRequest(identifier: backgroundTaskId)
         backgroundTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 5) //60 minutes from now
         do {
+            print("submit background app refresh ")
             try BGTaskScheduler.shared.submit(backgroundTaskRequest)
+            print("submit background app refresh try success ")
         } catch {
             print("fail to schedule background app refresh")
         }

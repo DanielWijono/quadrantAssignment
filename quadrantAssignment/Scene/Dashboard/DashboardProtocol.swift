@@ -24,6 +24,7 @@ protocol DashboardPresenterToInteractor: AnyObject {
     func loadCurrenctPriceIndex() -> [PriceIndex]
     func requestLocationPermission()
     func getDailyCurrencyIndex()
+    func getCurrencyPriceIndexApi()
 }
 
 protocol DashboardPresenterToRouter: AnyObject {}
@@ -43,6 +44,7 @@ protocol DashboardViewToPresenter: AnyObject {
     func getCurrentPriceIndex(index: Int) -> String
     func getLongitudePriceIndex(index: Int) -> String
     func getLatitudePriceIndex(index: Int) -> String
+    func getCurrentPriceApi()
 }
 
 protocol DashboardInteractorToPresenter: AnyObject {
