@@ -82,8 +82,8 @@ extension DashboardPresenter: DashboardViewToPresenter {
 
     private func pickFiveLastCurrencyIndex() -> [PriceIndex] {
         var priceIndexArray = interactor?.loadCurrenctPriceIndex() ?? []
-        if priceIndexArray.count > 5 {
-            priceIndexArray = Array(priceIndexArray.prefix(5))
+        if priceIndexArray.count > QuadrantUIConstant.intFive {
+            priceIndexArray = Array(priceIndexArray.prefix(QuadrantUIConstant.intFive))
         }
         return priceIndexArray
     }
@@ -102,20 +102,20 @@ extension DashboardPresenter: DashboardInteractorToPresenter {
         listPriceIndex = pickFiveLastCurrencyIndex()
         let currDate = currentPriceResp?.time.updatedISO.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currDate ?? "")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + QuadrantUIConstant.durationGlance) {
             self.refreshView()
         }
     }
 
     func didFailedGetCurrentPrice(error: NetworkError) {
-
+        print("error : \(error.localizedDescription)")
     }
 
     func didLoadCurrencyIndexSuccess(priceIndex: PriceIndex) {
         listPriceIndex = pickFiveLastCurrencyIndex()
         let currentDate = priceIndex.updatedDateTime.formatDateInString(convertDateTo: DateFormattingConstant.daily.rawValue)
         view?.updateDateTitle(value: currentDate)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + QuadrantUIConstant.durationGlance, execute: {
             self.refreshView()
         })
     }

@@ -42,7 +42,7 @@ class DashboardViewController: UIViewController {
         xAxis.labelPosition = .bottom
         xAxis.drawAxisLineEnabled = true
         xAxis.gridLineWidth = .zero
-        xAxis.axisMinimum = 1
+        xAxis.axisMinimum = .zero
 
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
@@ -62,7 +62,8 @@ class DashboardViewController: UIViewController {
         // Legend
         chartView.legend.enabled = false
         // Chart Offset
-        chartView.setExtraOffsets(left: 10, top: 0, right: 20, bottom: 50)
+        chartView.setExtraOffsets(left: QuadrantUIConstant.floatTen, top: .zero,
+                                  right: QuadrantUIConstant.floatTwenty, bottom: QuadrantUIConstant.floatFifty)
     }
 }
 
@@ -91,15 +92,12 @@ extension DashboardViewController: DashboardPresenterToView {
         for index in .zero..<(populateChartDataEntry?.count ?? .zero) {
             let xCoordinate = populateChartDataEntry?[index].x ?? .zero
             let yCoordinate = populateChartDataEntry?[index].y ?? .zero
-            print("x coordinate : \(xCoordinate)")
-            print("y coordinate : \(yCoordinate)")
             entries.append(BarChartDataEntry(x: xCoordinate, y: yCoordinate))
         }
         let set = BarChartDataSet(entries: entries, label: "Price")
         set.colors = ChartColorTemplates.colorful()
         let data = BarChartData(dataSet: set)
-        data.setDrawValues(true)
-        data.setValueTextColor(.clear)
+        data.setDrawValues(false)
         chartView.data = data
     }
 }
@@ -127,7 +125,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return QuadrantUIConstant.intOne
     }
 }
 

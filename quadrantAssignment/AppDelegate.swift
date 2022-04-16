@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func scheduleBackgroundRefresh() {
         let backgroundTaskId = AppSetting.shared.infoForKey(AppConstant.backgroundTaskId.rawValue)
         let backgroundTaskRequest = BGAppRefreshTaskRequest(identifier: backgroundTaskId)
-        backgroundTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 5) //60 minutes from now
+        backgroundTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 60 * 60) //60 minutes from now
         do {
             print("submit background app refresh ")
             try BGTaskScheduler.shared.submit(backgroundTaskRequest)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum QuadrantUIConstant {
     static let lineWidthThin = 1
@@ -22,4 +23,10 @@ enum QuadrantUIConstant {
     static let durationLong = 2.0
 
     static let alphaMedium = 0.5
+
+    static let intOne: Int = 1
+    static let intFive: Int = 5
+    static let floatTen: CGFloat = 10
+    static let floatTwenty: CGFloat = 20
+    static let floatFifty: CGFloat = 50
 }
