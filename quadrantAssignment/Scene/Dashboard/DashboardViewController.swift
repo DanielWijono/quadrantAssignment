@@ -14,7 +14,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
-        print("atpped")
+        print("tapped")
     }
 
     @IBOutlet weak var chartView: LineChartView!
@@ -25,9 +25,8 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         registerTableView()
         setupChartView()
-        presenter?.getCurrentPrice()
+        presenter?.getDailyCurrentPriceApi()
         presenter?.requestLocationPermission()
-        infoTableView.reloadData()
     }
 
     func registerTableView() {
@@ -58,34 +57,60 @@ class DashboardViewController: UIViewController {
 }
 
 extension DashboardViewController: DashboardPresenterToView {
+    func updateDateTitle(value: String) {
+        dateLabel.text = value
+    }
 
     func reloadDataTableView() {
         infoTableView.reloadData()
     }
 
     func showLoading() {
-
+        //TO DO
     }
 
     func dismissLoading() {
-
+        //TO DO
     }
 
+    func updateChart() {
+        chartView.leftAxis.axisMaximum = presenter?.getMaxAxis() ?? .zero
+        let dataSet = LineChartDataSet(entries: [], label: .emptyString)
+        dataSet.drawIconsEnabled = false
+        dataSet.setColor(.clear)
+        dataSet.setCircleColor(.clear)
+        dataSet.lineWidth = CGFloat(QuadrantUIConstant.lineWidthThin)
+        dataSet.drawCircleHoleEnabled = false
+        dataSet.valueFont = .systemFont(ofSize: .zero)
+        dataSet.formLineWidth = CGFloat(QuadrantUIConstant.lineWidthThin)
+        dataSet.formSize = CGFloat(QuadrantUIConstant.formSizeSmall)
+
+        (presenter?.populateChartDataEntry() ?? []).forEach { (chartData) in dataSet.addEntryOrdered(chartData) }
+        dataSet.mode = .cubicBezier
+        dataSet.fillAlpha = QuadrantUIConstant.alphaMedium
+        dataSet.fillColor = .green
+        dataSet.drawFilledEnabled = true
+        let data = LineChartData(dataSet: dataSet)
+        chartView.data = data
+        chartView.animate(xAxisDuration: QuadrantUIConstant.durationShort)
+        chartView.setNeedsDisplay()
+    }
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return presenter?.getTotalPriceIndex() ?? .zero
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DashboardTableViewCell.className, for: indexPath) as? DashboardTableViewCell else { return UITableViewCell() }
+        guard let presenter = presenter else { return UITableViewCell() }
 
-        cell.timeLabel.text = "time"
-        cell.priceLabel.text = "pricing"
-        cell.longitudeLabel.text = "longitude"
-        cell.latitudeLabel.text = "latitude"
+        cell.timeLabel.text = presenter.getTimePriceIndex(index: indexPath.row)
+        cell.priceLabel.text = presenter.getCurrentPriceIndex(index: indexPath.row)
+        cell.longitudeLabel.text = presenter.getLongitudePriceIndex(index: indexPath.row)
+        cell.latitudeLabel.text = presenter.getLatitudePriceIndex(index: indexPath.row)
 
         return cell
     }
@@ -100,5 +125,5 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DashboardViewController: ChartViewDelegate {
-    
+
 }

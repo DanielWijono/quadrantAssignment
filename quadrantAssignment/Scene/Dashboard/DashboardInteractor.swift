@@ -33,11 +33,45 @@ extension DashboardInteractor: DashboardPresenterToInteractor {
     func requestLocationPermission() {
         locationService.requestLocation()
     }
+
+    func getCurrencyPriceIndexApi() {
+        worker?.getCurrentPrice()
+    }
+
+    func getDailyCurrencyIndex() {
+        let listPriceIndex = loadCurrenctPriceIndex()
+        let today = Date().dateToString(withFormat: DateFormattingConstant.days.rawValue)
+        let listPriceIndexDaily = listPriceIndex.filter {
+            return ($0.updatedDateTime.toDate().dateToString(withFormat: DateFormattingConstant.days.rawValue) == today)
+        }
+        let sortedList = listPriceIndexDaily.sorted { $0.updatedDateTime.toDate().compare($1.updatedDateTime.toDate()) == .orderedDescending }
+        try? dataService.save(data: sortedList, key: PriceIndex.structName)
+        if let latestPriceIndex = sortedList.first {
+            presenter?.didLoadCurrencyIndexSuccess(priceIndex: latestPriceIndex)
+            print("sorted list exist")
+        } else {
+            getCurrencyPriceIndexApi()
+            print("sorted list not exist")
+        }
+    }
 }
 
 extension DashboardInteractor: CurrentPriceProtocol {
     func didSuccessGetCurrentPrice(response: CurrentPriceResponse) {
-        presenter?.didSuccessGetCurrentPrice(response: response)
+        do {
+            let dateTime = response.time.updatedISO
+            let value = response.bpi.usd.rateFloat
+            let longitude = String((locationService.getLongitude()))
+            let latitude = String(locationService.getLatitude())
+            let priceIndex = PriceIndex(updatedDateTime: dateTime, longitude: longitude, latitude: latitude, value: value)
+            var priceIndexArray = loadCurrenctPriceIndex()
+            priceIndexArray.append(priceIndex)
+            let sortedList = priceIndexArray.sorted { $0.updatedDateTime.toDate().compare($1.updatedDateTime.toDate()) == .orderedDescending }
+            try dataService.save(data: sortedList, key: PriceIndex.structName)
+            presenter?.didSuccessGetCurrentPrice(response: response)
+        } catch {
+            print("catch error")
+        }
     }
 
     func didFailedGetCurrentPrice(error: NetworkError) {

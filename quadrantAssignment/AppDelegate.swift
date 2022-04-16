@@ -8,14 +8,14 @@
 import UIKit
 import BackgroundTasks
 
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        print("did finish launching")
         let backgroundTaskId = AppSetting.shared.infoForKey(AppConstant.backgroundTaskId.rawValue)
         BGTaskScheduler.shared.register(forTaskWithIdentifier: backgroundTaskId, using: nil) { bgTask in
+            print("bg task scheduler register call back")
             self.handleBackgroundAppRefresh(task: bgTask as! BGAppRefreshTask)
         }
 
@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkService.instance.request(DashboardService.getCurrentPrice, c: CurrentPriceResponse.self) { result in
             switch result {
             case .success(let res):
+                print("RESPONSE SUCCESS")
                 let dateTime = res.time.updatedISO
                 let currentPrice = res.bpi.usd.rateFloat
                 let longitude = String(LocationService.shared.getLongitude())
@@ -51,11 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
             case .failure(let error):
-                print(error)
+                print("RESPONSE FAILURE : \(error)")
             }
             task.setTaskCompleted(success: true)
         }
         task.expirationHandler = {
+            print("TASK EXPIRED")
             task.setTaskCompleted(success: false)
         }
     }
@@ -63,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func scheduleBackgroundRefresh() {
         let backgroundTaskId = AppSetting.shared.infoForKey(AppConstant.backgroundTaskId.rawValue)
         let backgroundTaskRequest = BGAppRefreshTaskRequest(identifier: backgroundTaskId)
-        backgroundTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 3600) //60 minutes from now
+        backgroundTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 5) //60 minutes from now
         do {
             try BGTaskScheduler.shared.submit(backgroundTaskRequest)
         } catch {
